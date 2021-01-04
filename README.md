@@ -1,7 +1,7 @@
 #I want to build a pipeline from CDK.
 
 This is my architecture diagram.
-![image](https://user-images.githubusercontent.com/59716276/103522802-dab0d080-4eb5-11eb-83e5-8292cd7a447c.png)
+![image](https://user-images.githubusercontent.com/59716276/103523108-5743af00-4eb6-11eb-80e5-592825be6a00.png)
 
 AWS Resource used as below:
 1. Source: CodeCommit/Bitbucket
