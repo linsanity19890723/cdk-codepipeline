@@ -5,7 +5,6 @@ import * as codepipeline from '@aws-cdk/aws-codepipeline';
 import * as codepipeline_actions from '@aws-cdk/aws-codepipeline-actions';
 import { PhysicalName } from '@aws-cdk/core';
 import * as iam  from '@aws-cdk/aws-iam';
-import { S3DeployAction } from '@aws-cdk/aws-codepipeline-actions';
 import * as s3 from '@aws-cdk/aws-s3';
 import { Artifact } from '@aws-cdk/aws-codepipeline';
 // import * as cloudformation from @aws-cdk/aws-cloudformation;
@@ -59,7 +58,6 @@ export class CodecommitStack extends cdk.Stack {
       })
     
     const sourceOutput = new codepipeline.Artifact();
-    
     const sourceAction = new codepipeline_actions.CodeCommitSourceAction({
       actionName: 'CodeCommit',
       repository,
@@ -72,7 +70,7 @@ export class CodecommitStack extends cdk.Stack {
     owner: 'aws',
     repo: 'devops',
     output: sourceOutput,
-    connectionArn: 'arn:aws:codestar-connections:us-east-2:467343721842:connection/8bf75d29-6496-457e-81c7-217b0ca04ab9',
+    connectionArn: 'arn:aws:codestar-connections:us-east-2:accountid:connection/connectionarn,
   });
   */
     const buildAction = new codepipeline_actions.CodeBuildAction({
@@ -83,7 +81,7 @@ export class CodecommitStack extends cdk.Stack {
       executeBatchBuild: true // optional, defaults to false
     });
     const actionRole = new iam.Role(this, 'ActionRole', {
-      assumedBy: new iam.AccountPrincipal('467343721842'),
+      assumedBy: new iam.AccountPrincipal('accountid'),
       // the role has to have a physical name set
       roleName: PhysicalName.GENERATE_IF_NEEDED,
     });
