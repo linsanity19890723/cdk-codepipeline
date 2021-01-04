@@ -21,4 +21,4 @@ AWS Resource used as below:
 3. Deploy: CloudFormation
 
 This is 
-https://user-images.githubusercontent.com/59716276/103522226-04b5c300-4eb5-11eb-8e2a-713ad8338d8c.png
+![image](https://user-images.githubusercontent.com/59716276/103522226-04b5c300-4eb5-11eb-8e2a-713ad8338d8c.png)
