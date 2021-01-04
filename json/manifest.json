@@ -1,0 +1,578 @@
+{
+  "version": "7.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "CodecommitStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "CodecommitStack.template.json"
+      },
+      "metadata": {
+        "/CodecommitStack/MyRepository/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyRepository4C4BD5FC",
+            "trace": [
+              "new Repository (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codecommit\\lib\\repository.ts:335:23)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:16:24)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyProject/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyProjectRole9BBE5233",
+            "trace": [
+              "new Role (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:327:18)",
+              "new Project (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:738:31)",
+              "new PipelineProject (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\pipeline-project.ts:14:5)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:20:21)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyProject/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyProjectRoleDefaultPolicyB19B7C29",
+            "trace": [
+              "new Policy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:368:28)",
+              "Role.addToPolicy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:376:17)",
+              "PipelineProject.addToRolePolicy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:205:17)",
+              "new Project (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:827:10)",
+              "new PipelineProject (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\pipeline-project.ts:14:5)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:20:21)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyProject/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyProject39F7B0AE",
+            "trace": [
+              "new Project (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\project.ts:791:22)",
+              "new PipelineProject (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codebuild\\lib\\pipeline-project.ts:14:5)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:20:21)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/ActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ActionRole60B0EDF7",
+            "trace": [
+              "new Role (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:327:18)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:83:24)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/ArtifactsBucketEncryptionKey/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineArtifactsBucketEncryptionKey8BF0A7F3",
+            "trace": [
+              "new Key (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-kms\\lib\\key.ts:403:22)",
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:257:25)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/ArtifactsBucketEncryptionKeyAlias/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineArtifactsBucketEncryptionKeyAlias9D4F8C59",
+            "trace": [
+              "new Alias (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-kms\\lib\\alias.ts:198:22)",
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:263:9)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/ArtifactsBucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineArtifactsBucket727923DD",
+            "trace": [
+              "new Bucket (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.ts:1285:22)",
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:270:21)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineRoleC0D47CA4",
+            "trace": [
+              "new Role (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:327:18)",
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:281:31)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/Role/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineRoleDefaultPolicy34F09EFA",
+            "trace": [
+              "new Policy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:368:28)",
+              "Function.addToPrincipal (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.ts:168:61)",
+              "Function.addToPrincipalOrResource (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.ts:119:26)",
+              "Bucket.grant (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.ts:695:27)",
+              "Bucket.grantReadWrite (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\node_modules\\@aws-cdk\\aws-s3\\lib\\bucket.ts:632:17)",
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:297:25)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineAED38ECF",
+            "trace": [
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:285:26)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/Source/BitBucket_Source/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineSourceBitBucketSourceCodePipelineActionRole93D519B8",
+            "trace": [
+              "new Role (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:327:18)",
+              "Pipeline.getRoleForAction (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:576:20)",
+              "Pipeline._attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:403:29)",
+              "Stage.attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:141:27)",
+              "Stage.addAction (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:91:29)",
+              "new Stage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:38:12)",
+              "Pipeline.addStage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:332:19)",
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:316:12)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/Source/BitBucket_Source/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineSourceBitBucketSourceCodePipelineActionRoleDefaultPolicy756AF69C",
+            "trace": [
+              "new Policy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:368:28)",
+              "Role.addToPolicy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:376:17)",
+              "BitBucketSourceAction.bound (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\bitbucket\\source-action.ts:95:18)",
+              "BitBucketSourceAction.bind (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\action.ts:59:17)",
+              "RichAction.bind (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\rich-action.ts:26:24)",
+              "Pipeline._attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:409:37)",
+              "Stage.attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:141:27)",
+              "Stage.addAction (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:91:29)",
+              "new Stage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:38:12)",
+              "Pipeline.addStage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:332:19)",
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:316:12)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/Build/CodeBuild/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineBuildCodeBuildCodePipelineActionRoleCAE538CA",
+            "trace": [
+              "new Role (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:327:18)",
+              "Pipeline.getRoleForAction (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:576:20)",
+              "Pipeline._attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:403:29)",
+              "Stage.attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:141:27)",
+              "Stage.addAction (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:91:29)",
+              "new Stage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:38:12)",
+              "Pipeline.addStage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:332:19)",
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:316:12)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/Build/CodeBuild/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineBuildCodeBuildCodePipelineActionRoleDefaultPolicyD9654D9B",
+            "trace": [
+              "new Policy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:368:28)",
+              "Role.addToPolicy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:376:17)",
+              "CodeBuildAction.bound (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\codebuild\\build-action.ts:149:18)",
+              "CodeBuildAction.bind (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\action.ts:59:17)",
+              "RichAction.bind (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\rich-action.ts:26:24)",
+              "Pipeline._attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:409:37)",
+              "Stage.attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:141:27)",
+              "Stage.addAction (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:91:29)",
+              "new Stage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:38:12)",
+              "Pipeline.addStage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:332:19)",
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:316:12)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/Deploy/ExecuteChangesTest/CodePipelineActionRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineDeployExecuteChangesTestCodePipelineActionRole399CCB14",
+            "trace": [
+              "new Role (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:327:18)",
+              "Pipeline.getRoleForAction (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:576:20)",
+              "Pipeline._attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:403:29)",
+              "Stage.attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:141:27)",
+              "Stage.addAction (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:91:29)",
+              "new Stage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:38:12)",
+              "Pipeline.addStage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:332:19)",
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:316:12)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/MyPipeline/Deploy/ExecuteChangesTest/CodePipelineActionRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MyPipelineDeployExecuteChangesTestCodePipelineActionRoleDefaultPolicy032EE779",
+            "trace": [
+              "new Policy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.ts:154:22)",
+              "Role.addToPrincipalPolicy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:368:28)",
+              "Role.addToPolicy (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.ts:376:17)",
+              "SingletonPolicy.statementFor (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\cloudformation\\pipeline-actions.ts:577:17)",
+              "SingletonPolicy.grantExecuteChangeSet (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\cloudformation\\pipeline-actions.ts:519:10)",
+              "CloudFormationExecuteChangeSetAction.bound (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\cloudformation\\pipeline-actions.ts:128:43)",
+              "CloudFormationExecuteChangeSetAction.bind (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline-actions\\lib\\action.ts:59:17)",
+              "RichAction.bind (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\rich-action.ts:26:24)",
+              "Pipeline._attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:409:37)",
+              "Stage.attachActionToPipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:141:27)",
+              "Stage.addAction (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:91:29)",
+              "new Stage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\private\\stage.ts:38:12)",
+              "Pipeline.addStage (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:332:19)",
+              "new Pipeline (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\aws-codepipeline\\lib\\pipeline.ts:316:12)",
+              "new CodecommitStack (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\lib\\codecommit-stack.ts:115:5)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\bin\\codecommit.ts:8:1)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Module.m._compile (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1056:23)",
+              "Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Object.require.extensions.<computed> [as .ts] (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\index.ts:1059:12)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "main (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:198:14)",
+              "Object.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\ts-node\\src\\bin.ts:288:3)",
+              "Module._compile (internal/modules/cjs/loader.js:1176:30)",
+              "Object.Module._extensions..js (internal/modules/cjs/loader.js:1196:10)",
+              "Module.load (internal/modules/cjs/loader.js:1040:32)",
+              "Function.Module._load (internal/modules/cjs/loader.js:929:14)",
+              "Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)",
+              "internal/main/run_main_module.js:17:47"
+            ]
+          }
+        ],
+        "/CodecommitStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata",
+            "trace": [
+              "new MetadataResource (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.ts:51:24)",
+              "C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:140:5",
+              "visit (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:200:5)",
+              "visit (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:196:5)",
+              "injectMetadataResources (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:131:3)",
+              "Object.synthesize (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:18:3)",
+              "App.synth (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\stage.ts:188:23)",
+              "process.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:485:12)",
+              "process.emit (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\source-map-support\\source-map-support.js:495:21)",
+              "process.topLevelDomainCallback (domain.js:137:15)"
+            ]
+          }
+        ],
+        "/CodecommitStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable",
+            "trace": [
+              "new MetadataResource (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\metadata-resource.ts:60:27)",
+              "C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:140:5",
+              "visit (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:200:5)",
+              "visit (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:196:5)",
+              "injectMetadataResources (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:131:3)",
+              "Object.synthesize (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\private\\synthesis.ts:18:3)",
+              "App.synth (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\stage.ts:188:23)",
+              "process.<anonymous> (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\@aws-cdk\\core\\lib\\app.ts:123:45)",
+              "Object.onceWrapper (events.js:422:26)",
+              "process.emit (events.js:315:20)",
+              "process.EventEmitter.emit (domain.js:485:12)",
+              "process.emit (C:\\Users\\Leo.Lee\\cdk project\\codecommit\\node_modules\\source-map-support\\source-map-support.js:495:21)",
+              "process.topLevelDomainCallback (domain.js:137:15)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
