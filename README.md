@@ -1,4 +1,4 @@
-# I want to build a pipeline from CDK.
+# Build a pipeline from CDK which can update code to Lambda.
 
 This is my architecture diagram.
 
@@ -11,8 +11,6 @@ AWS Resource used as below:
    In this stage,CodeBuild will compile and output the yml file. 
 3. Deploy: CloudFormation, 
    In this stage,CloudFormation will create and update the stack with the yml file from CodeBuild. 
-
-
 
 
 # Welcome to your CDK TypeScript project!
