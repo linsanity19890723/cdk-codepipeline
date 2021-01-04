@@ -7,7 +7,7 @@ This is my architecture diagram.
 AWS Resource used as below:
 1. Source: CodeCommit/Bitbucket
 2. Build: CodeBuild
-⋅⋅⋅*In this stage,Codebuild will compile and output the yml file. 
+    In this stage,Codebuild will compile and output the yml file. 
 3. Deploy: CloudFormation 
    *
 --
