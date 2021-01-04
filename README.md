@@ -1,12 +1,13 @@
 # I want to build a pipeline from CDK.
 
 This is my architecture diagram.
+
 ![image](https://user-images.githubusercontent.com/59716276/103523108-5743af00-4eb6-11eb-80e5-592825be6a00.png)
 
 AWS Resource used as below:
 1. Source: CodeCommit/Bitbucket
 2. Build: CodeBuild
-   *In this stage,Codebuild will compile and output the yml file. 
+*In this stage,Codebuild will compile and output the yml file. 
 3. Deploy: CloudFormation 
    *
 --
