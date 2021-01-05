@@ -12,10 +12,13 @@ import { Artifact } from '@aws-cdk/aws-codepipeline';
 export class CodecommitStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
+
+    //Create source 
     const repository = new codecommit.Repository(this, 'MyRepository', {
       repositoryName: 'MyRepository',
     });
     
+    //Create CodeBuild Project and buildspec.yml
     const project = new codebuild.PipelineProject(this, 'MyProject',{buildSpec:codebuild.BuildSpec.fromObject({
       
         "version": 0.2,
@@ -57,6 +60,7 @@ export class CodecommitStack extends cdk.Stack {
     }),
       })
     
+    //Create Source Action
     const sourceOutput = new codepipeline.Artifact();
     const sourceAction = new codepipeline_actions.CodeCommitSourceAction({
       actionName: 'CodeCommit',
@@ -64,7 +68,7 @@ export class CodecommitStack extends cdk.Stack {
       output: sourceOutput,
     });
     
-   /*
+   /*Add Bitbucket Source
    const sourceAction = new codepipeline_actions.BitBucketSourceAction({
     actionName: 'BitBucket_Source',
     owner: 'aws',
@@ -73,6 +77,7 @@ export class CodecommitStack extends cdk.Stack {
     connectionArn: 'arn:aws:codestar-connections:us-east-2:accountid:connection/connectionarn,
   });
   */
+    //Create Build Action
     const buildAction = new codepipeline_actions.CodeBuildAction({
       actionName: 'CodeBuild',
       project,
@@ -86,12 +91,7 @@ export class CodecommitStack extends cdk.Stack {
       roleName: PhysicalName.GENERATE_IF_NEEDED,
     });
     
-    // in the pipeline stack...
-    // const deployaction = new codepipeline_actions.CloudFormationCreateReplaceChangeSetAction ({
-    //   actionName:'CloudFormation',
-    //   changeSetName:'Changeset',
-    //   role: actionRole, // this action will be cross-account as well
-    // });
+    //Create Deploy phase
     const executeOutput = new codepipeline.Artifact('CloudFormation');
     /*
     const updateAction = new codepipeline_actions.CloudFormationCreateReplaceChangeSetAction({
@@ -112,6 +112,7 @@ export class CodecommitStack extends cdk.Stack {
       outputFileName: 'overrides.json',
       output: executeOutput,
 });
+    //Create pipeline each phase
     new codepipeline.Pipeline(this, 'MyPipeline', {
       stages: [
         {
