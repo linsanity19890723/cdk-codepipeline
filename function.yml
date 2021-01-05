@@ -1,0 +1,9 @@
+Resources:
+  SampleLambdaFunction:
+    Properties:
+      CodeUri: .
+      FunctionName: lambda-move-object
+      Handler: lambda_function.lambda_handler
+      Runtime: python3.8
+    Type: AWS::Serverless::Function
+Transform: AWS::Serverless-2016-10-31
