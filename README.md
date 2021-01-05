@@ -4,9 +4,12 @@ This is my architecture diagram.
 
 ![image](https://user-images.githubusercontent.com/59716276/103523108-5743af00-4eb6-11eb-80e5-592825be6a00.png)
 
-./function.yml: For CloudFormation to create lambda.
-./buildspec.yml: Upload template to S3 bucket in CodeBuild.
-./lambda_function.py: Lambda Function.
+./function.yml: For CloudFormation to create lambda.  
+
+./buildspec.yml: Upload template to S3 bucket in CodeBuild.  
+
+./lambda_function.py: Lambda Function.  
+
 
 AWS Resource used as below:
 
