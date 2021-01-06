@@ -12,14 +12,27 @@ import { Artifact } from '@aws-cdk/aws-codepipeline';
 export class CodecommitStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
-
+    //Create s3 bucket for CodeBuild Artifact
+    const s3bucket = "leo-cicd-cdk-test"
     //Create source 
     const repository = new codecommit.Repository(this, 'MyRepository', {
       repositoryName: 'MyRepository',
     });
     
-    //Create CodeBuild Project and buildspec.yml
-    const project = new codebuild.PipelineProject(this, 'MyProject',{buildSpec:codebuild.BuildSpec.fromObject({
+    const buildspecfilename = "buildspec.yml"
+        //Create CodeBuild Project and buildspec.yml
+    const project = new codebuild.PipelineProject(this,'foo',{buildSpec: codebuild.BuildSpec.fromSourceFilename('buildspec.yml'),
+      environment:{
+      environmentVariables:{
+        S3BUCKET:{
+          type:codebuild.BuildEnvironmentVariableType.PLAINTEXT,
+          value:s3bucket
+        }
+      }
+    },
+    
+    })
+    /*const project = new codebuild.PipelineProject(this, 'MyProject',{buildSpec:codebuild.BuildSpec.fromObject({
       
         "version": 0.2,
         "phases": {
@@ -56,14 +69,31 @@ export class CodecommitStack extends cdk.Stack {
           packageZip: true,
           path: '/',
           identifier: 'function-out.yml'
-          */,
-    }),
-      })
-    
-    //Create Source Action
+          
+    }),    
+    environment:{
+      environmentVariables:{
+        S3BUCKET:{
+          type:codebuild.BuildEnvironmentVariableType.PLAINTEXT,
+          value:s3bucket
+        }
+      }
+    }
+      })*/
+
+    // add permission to codebuild for uploading artifact to S3
+
+
+
+
+    //===Create Artifact===
     const sourceOutput = new codepipeline.Artifact();
+    const buildOutput = new codepipeline.Artifact();
+
+    //===Create Source Action===
     const sourceAction = new codepipeline_actions.CodeCommitSourceAction({
       actionName: 'CodeCommit',
+      branch:'master',
       repository,
       output: sourceOutput,
     });
@@ -77,23 +107,24 @@ export class CodecommitStack extends cdk.Stack {
     connectionArn: 'arn:aws:codestar-connections:us-east-2:accountid:connection/connectionarn,
   });
   */
-    //Create Build Action
+    //===Create Build Action===
     const buildAction = new codepipeline_actions.CodeBuildAction({
       actionName: 'CodeBuild',
       project,
       input: sourceOutput,
-      outputs: [new codepipeline.Artifact()], // optional
-      executeBatchBuild: true // optional, defaults to false
+      outputs: [buildOutput],
+      // executeBatchBuild: true // optional, defaults to false
     });
     const actionRole = new iam.Role(this, 'ActionRole', {
-      assumedBy: new iam.AccountPrincipal('accountid'),
+      assumedBy: new iam.AccountPrincipal('467343721842'),
       // the role has to have a physical name set
       roleName: PhysicalName.GENERATE_IF_NEEDED,
     });
     
-    //Create Deploy phase
-    const executeOutput = new codepipeline.Artifact('CloudFormation');
+    //===Create Deploy phase===
     /*
+    const executeOutput = new codepipeline.Artifact('CloudFormation');
+    
     const updateAction = new codepipeline_actions.CloudFormationCreateReplaceChangeSetAction({
       adminPermissions:true,
       templatePath:'BuildArtifact::function-out.yml'
@@ -104,6 +135,7 @@ export class CodecommitStack extends cdk.Stack {
       outputFileName: 'overrides.json',
       output: executeOutput,
 });*/
+    /*
     const executeChangeSetAction = new codepipeline_actions.CloudFormationExecuteChangeSetAction({
       actionName: 'ExecuteChangesTest',
       runOrder: 2,
@@ -111,8 +143,9 @@ export class CodecommitStack extends cdk.Stack {
       changeSetName:'test',
       outputFileName: 'overrides.json',
       output: executeOutput,
-});
-    //Create pipeline each phase
+});*/
+
+    //===Create pipeline each phase===
     new codepipeline.Pipeline(this, 'MyPipeline', {
       stages: [
         {
@@ -123,10 +156,11 @@ export class CodecommitStack extends cdk.Stack {
           stageName: 'Build',
           actions: [buildAction],
         },
+        /*
         {
           stageName: 'Deploy',
           actions: [executeChangeSetAction],
-        }
+        }*/
       ],
     });
 
