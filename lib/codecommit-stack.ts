@@ -7,13 +7,23 @@ import { PhysicalName } from '@aws-cdk/core';
 import * as iam  from '@aws-cdk/aws-iam';
 import * as s3 from '@aws-cdk/aws-s3';
 import { Artifact } from '@aws-cdk/aws-codepipeline';
+import { PolicyStatement, Role, ServicePrincipal } from '@aws-cdk/aws-iam';
 // import * as cloudformation from @aws-cdk/aws-cloudformation;
 
 export class CodecommitStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
+
+    //Create Cloudformation execrole
+    const changeSetExecRole = new Role(this, 'ChangeSetRole',
+    {assumedBy:new ServicePrincipal('cloudformation.amazonaws.com')
+
+    }
+    )
+
     //Create s3 bucket for CodeBuild Artifact
     const s3bucket = "leo-cicd-cdk-test"
+
     //Create source 
     const repository = new codecommit.Repository(this, 'MyRepository', {
       repositoryName: 'MyRepository',
@@ -115,16 +125,23 @@ export class CodecommitStack extends cdk.Stack {
       outputs: [buildOutput],
       // executeBatchBuild: true // optional, defaults to false
     });
-    const actionRole = new iam.Role(this, 'ActionRole', {
-      assumedBy: new iam.AccountPrincipal('467343721842'),
-      // the role has to have a physical name set
-      roleName: PhysicalName.GENERATE_IF_NEEDED,
-    });
+
+    
+    // const actionRole = new iam.Role(this, 'ActionRole', {
+    //   assumedBy: new iam.AccountPrincipal('467343721842'),
+    //   // the role has to have a physical name set
+    //   roleName: PhysicalName.GENERATE_IF_NEEDED,
+    // });
     
     //===Create Deploy phase===
-    /*
-    const executeOutput = new codepipeline.Artifact('CloudFormation');
+    changeSetExecRole.addToPolicy(new PolicyStatement({resources:['*'],actions:['*']}))
+
+    const stackName = "BrelandsStack";
+    const changeSetName = 'MyMagicChangeSet'
     
+    
+
+    /*
     const updateAction = new codepipeline_actions.CloudFormationCreateReplaceChangeSetAction({
       adminPermissions:true,
       templatePath:'BuildArtifact::function-out.yml'
