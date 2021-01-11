@@ -8,7 +8,11 @@ import * as iam  from '@aws-cdk/aws-iam';
 import * as s3 from '@aws-cdk/aws-s3';
 import { Artifact } from '@aws-cdk/aws-codepipeline';
 import { PolicyStatement, Role, ServicePrincipal } from '@aws-cdk/aws-iam';
-// import * as cloudformation from @aws-cdk/aws-cloudformation;
+import * as cfn from '@aws-cdk/aws-cloudformation';
+import * as cpactions from '@aws-cdk/aws-codepipeline-actions';
+import { countResources } from '@aws-cdk/assert';
+import { CloudFormationCapabilities } from '@aws-cdk/aws-cloudformation';
+import * as core from '@aws-cdk/core';
 
 export class CodecommitStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
@@ -17,7 +21,6 @@ export class CodecommitStack extends cdk.Stack {
     //Create Cloudformation execrole
     const changeSetExecRole = new Role(this, 'ChangeSetRole',
     {assumedBy:new ServicePrincipal('cloudformation.amazonaws.com')
-
     }
     )
 
@@ -134,13 +137,62 @@ export class CodecommitStack extends cdk.Stack {
     // });
     
     //===Create Deploy phase===
-    changeSetExecRole.addToPolicy(new PolicyStatement({resources:['*'],actions:['*']}))
+    changeSetExecRole.addToPolicy(new PolicyStatement({resources:['*'],actions:[
+    "events:EnableRule",
+    "events:PutRule",
+    "iam:CreateRole",
+    "iam:AttachRolePolicy",
+    "iam:PutRolePolicy",
+    "cloudformation:CreateChangeSet",
+    "iam:PassRole",
+    "iam:DetachRolePolicy",
+    "events:ListRuleNamesByTarget",
+    "iam:DeleteRolePolicy",
+    "events:ListRules",
+    "events:RemoveTargets",
+    "events:ListTargetsByRule",
+    "events:DisableRule",
+    "sns:*",
+    "events:PutEvents",
+    "iam:GetRole",
+    "events:DescribeRule",
+    "iam:DeleteRole",
+    "s3:GetBucketVersioning",
+    "events:TestEventPattern",
+    "events:PutPermission",
+    "events:DescribeEventBus",
+    "events:TagResource",
+    "events:PutTargets",
+    "events:DeleteRule",
+    "s3:GetObject",
+    "lambda:*",
+    "events:ListTagsForResource",
+    "events:RemovePermission",
+    "iam:GetRolePolicy",
+    "s3:GetObjectVersion",
+    "events:UntagResource",
+    "kms:Decrypt",
+    "kms:DescribeKey",
+  ]}))
 
     const stackName = "BrelandsStack";
     const changeSetName = 'MyMagicChangeSet'
+    // const deployAction = new codepipeline_actions.CloudFormationCreateReplaceChangeSetAction({
+    //   actionName: 'Deployment',
+    //   runOrder:1,
+    //   adminPermissions:false,
+    //   stackName:"BrelandsStack",
+    //   changeSetName:'MyMagicChangeSet',
+    //   templatePath:new codepipeline.ArtifactPath(buildOutput,'function-out.yml'),
+    //   });
+      
+    //   const executeChangeSetAction = new codepipeline_actions.CloudFormationExecuteChangeSetAction({
+    //     actionName: 'ExecuteChangesTest',
+    //     runOrder: 2,
+    //     stackName:"BrelandsStack",
+    //     changeSetName:'MyMagicChangeSet',
+    //   });
     
-    
-
     /*
     const updateAction = new codepipeline_actions.CloudFormationCreateReplaceChangeSetAction({
       adminPermissions:true,
@@ -173,11 +225,33 @@ export class CodecommitStack extends cdk.Stack {
           stageName: 'Build',
           actions: [buildAction],
         },
-        /*
+        
         {
           stageName: 'Deploy',
-          actions: [executeChangeSetAction],
-        }*/
+          actions: [
+            new cpactions.CloudFormationCreateReplaceChangeSetAction({
+              
+                  actionName: 'Deployment',
+                  runOrder:1,
+                  adminPermissions:true,
+                  capabilities:[cfn.CloudFormationCapabilities.ANONYMOUS_IAM, cfn.CloudFormationCapabilities.AUTO_EXPAND],
+                  stackName,
+                  changeSetName,
+                  deploymentRole:changeSetExecRole,
+                  templatePath:new codepipeline.ArtifactPath(buildOutput,'function-out.yml'),
+                  }),
+            new cpactions.CloudFormationExecuteChangeSetAction({
+                  
+                  actionName: 'ExecuteChangesTest',
+                  runOrder: 2,
+
+                  stackName:"BrelandsStack",
+                  changeSetName:'MyMagicChangeSet',
+                  
+            })
+            
+          ],
+        },
       ],
     });
 
